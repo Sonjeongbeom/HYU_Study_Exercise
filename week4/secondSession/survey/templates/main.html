@@ -1,0 +1,21 @@
+<h3>JB's Survey ?</h3>
+<div>
+    <a href="{% url 'new' %}">설문 문항 추가하기</a>
+</div>
+{% for survey in surveys %}
+<form method="post" action="save">
+    {% csrf_token %}
+    <p>문항번호{{survey.surveyIdx}}. {{survey.question}}</p>
+    <p><input type="radio" name="choice" value="{{survey.ans1}}">{{survey.ans1}}</p>
+    <p><input type="radio" name="choice" value="{{survey.ans2}}">{{survey.ans2}}</p>
+    <p><input type="radio" name="choice" value="{{survey.ans3}}">{{survey.ans3}}</p>
+    <p><input type="radio" name="choice" value="{{survey.ans4}}">{{survey.ans4}}</p>
+    <p>
+        <input type="submit" value="투표하기">
+        <input type="hidden" name="surveyIdx" value="{{survey.surveyIdx}}">
+        <a href="result?surveyIdx={{survey.surveyIdx}}">결과확인</a>
+    </p>
+</form>
+{% endfor %}
+
+

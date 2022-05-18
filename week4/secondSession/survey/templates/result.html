@@ -1,0 +1,13 @@
+<table>
+    <tr>
+        <th>문항</th>
+        <th>응답수</th>
+    </tr>
+    {% for choice, cnt in results.items %}
+    <tr>
+        <td>{{choice}}</td>
+        <td>{{cnt}}</td>
+    </tr>
+    {%endfor%}
+</table>
+<a href="/">홈으로</a>
