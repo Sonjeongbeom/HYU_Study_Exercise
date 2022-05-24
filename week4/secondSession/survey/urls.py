@@ -6,5 +6,5 @@ urlpatterns = [
     path('new', new, name='new'),
     path('create', create, name='create'),
     path('save', save, name='survey'),
-    path('result', result, name='result'),
+    path('result/<int:surveyIdx>', result, name='result'),
 ]

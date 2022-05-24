@@ -19,7 +19,7 @@ class Survey(models.Model) :
 
 class Answer(models.Model) :
     answerIdx = models.AutoField(primary_key=True)
-    # surveyIdx = models.ForeignKey(Survey, on_delete=models.CASCADE)
+    # surveyIdx = models.ForeignKey(Survey, on_delete=models.CASCADE,default=1)
     surveyIdx = models.IntegerField()
     choice = models.TextField()
 
