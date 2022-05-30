@@ -26,10 +26,10 @@ def create(request) :
     return redirect('main')
 
 def save(request) :
-    surveyIdx = request.POST["surveyIdx"]
     submit = Answer(surveyIdx = request.POST["surveyIdx"], choice = request.POST["choice"])
     submit.save()
-    return render(request, "complete.html", {"surveyIdx" : surveyIdx})
+    return render(request, "complete.html")
+    # return render(request, "complete.html", {"surveyIdx" : surveyIdx})
 
 # def result(request) :
 #     surveyIdx = request.GET["surveyIdx"]
